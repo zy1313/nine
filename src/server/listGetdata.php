@@ -1,4 +1,5 @@
 <?php
+header("content-type:text/html;charset=utf-8");
 # page =  2 
 # 链接数据库
 $db = mysqli_connect("127.0.0.1", "root", "", "nine");
@@ -7,8 +8,19 @@ $db = mysqli_connect("127.0.0.1", "root", "", "nine");
 # page 1 = 0,20
 # page 2 = 20,20
 # page 3 = 40,20
-$start = ($_REQUEST["page"] - 1) * 10;
-$sql = "SELECT * FROM goods LIMIT $start ,10";
+# 获取参数
+$page = ($_REQUEST["page"] -1 ) * 16;
+$type = $_REQUEST["sortType"];
+
+# 02-查询获取数据库所有的数据
+if($type == 0)
+{
+  $sql = "SELECT * FROM goods LIMIT $page, 16";
+}elseif($type == 1){
+  $sql = "SELECT * FROM goods ORDER BY price DESC LIMIT $page, 16";
+}else{
+  $sql = "SELECT * FROM goods ORDER BY price ASC LIMIT $page, 16";
+}
 $result = mysqli_query($db,$sql);
 $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
 // print_r($data);

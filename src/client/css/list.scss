@@ -17,7 +17,7 @@
 
 .content{
     width: 960px;
-    height: 2000px;
+    height: 1600px;
     margin: 0 auto;
     li{
         float: left;
@@ -84,16 +84,22 @@
     height: 20px;
     // background: #cccccc;
     margin: 0 auto;      
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     a{
-        background: pink;
+        background: #cccccc;
         display: inline-block;
         width: 30px;
         height: 20px;
         border: 1px solid black;
         text-align: center;
-  
         margin-right: 10px;
         color: black;
     }
+}
+#page .active{
+    background: pink;
+}
+.listTop .active{
+    background: pink;
+    color: black;
 }
