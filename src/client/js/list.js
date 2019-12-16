@@ -15,7 +15,7 @@ $(()=>{
         var html=""
         html+=JSON.parse(this.data.pic).map((ele,index)=>`<a href="" class="small"><img src=${ele} alt="" class="${index==0?"active":""}"></a>`).join("");
         this.root=document.createElement("div");
-        this.root.innerHTML=`<li><a href="" class="picb"><img src=${this.data.img} alt=""></a>
+        this.root.innerHTML=`<li class="listli"><a href="" class="picb"><img src=${this.data.img} alt=""></a>
         <div class="picm">${html}</div>
         <a href="" class="title">${this.data.title}</a>
         <div class="pop"><span>￥${this.data.price}</span></div>
@@ -33,7 +33,7 @@ $(()=>{
                 
             })
             // 给li标签添加边框
-            $("li").hover(function(){
+            $(this.root).find(".listli").hover(function(){
                 $(this).addClass("current")
             },function(){
                 $(this).removeClass("current")

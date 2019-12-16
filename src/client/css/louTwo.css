@@ -123,6 +123,10 @@
   margin-right: 20px;
 }
 
+.foor_justify .foorStyle .foorSlid .slideBulle .act {
+  background: red;
+}
+
 .foor_justify .foorStyle .foorSlid .contLeft,
 .foor_justify .foorStyle .foorSlid .contRight {
   background-color: rgba(0, 0, 0, 0.4);
@@ -153,4 +157,5 @@
   position: absolute;
   right: 0px;
   top: 270px;
+  z-index: 22;
 }

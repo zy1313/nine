@@ -431,3 +431,147 @@
 .navCase-right:hover img{
     display: block;
 }
+
+/* 楼层中写死的部分 */
+.oldTonew{
+    width: 1200px;
+    height: 270px;
+    margin: 0px auto;
+    margin-top: 50px;
+}
+.oldleft{
+    width: 560px;
+    height: 250px;
+    padding: 0  10px 10px;
+    float: left; 
+    background: white;
+    margin-right: 20px;
+}
+.oldleft .oldTitle{
+    width: 595px;
+    height: 50px;
+    line-height: 50px;
+}
+.oldleft .oldTitle b{
+    color: #000;
+    margin-right: 10px;
+}
+.oldleft .oldTitle span{
+    color: #9c9c9c;
+}
+.oldleft img{
+    width: 555px;
+    height: 200px;
+}
+
+/* 下一个渲染的楼层 */
+.freeWarp{
+    width: 1200px;
+    height: 268px;
+    margin: 20px auto;
+    /* background: white; */
+}
+.free{
+width: 580px;
+height: 258px;
+float: left;
+margin-left: 10px;
+background: white;
+}
+.free .ftitle{
+    width: 580px;
+    height: 50px;
+    line-height: 50px;
+}
+.free .ftitle b{
+    color: #000;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-left: 25px;
+}
+.free .ftitle a{
+   color: #cccc;
+   float: right;
+   text-decoration: none;
+   font-size: 14px;
+}
+.free .fcontent{
+    width: 580px;
+    height: 218px;
+    padding: 0  10px 10px;
+}
+.free .fcontent a{
+    display:inline-block;
+    width: 180px;
+    height: 198px;
+    padding: 4px;
+    
+}
+
+.free .ft{
+    width: 157px;
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+    font-weight: bold;
+    border-left: 4px solid #C43352;
+    color: #C43352;
+    padding-left: 5px;
+    overflow: hidden;
+}
+.free .ff{
+    width: 157px;
+    height: 16px;
+    font-size: 12px;
+    color: black;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.free img{
+    width: 120px;
+    height: 120px;
+    margin: 14px 18px 0;
+}
+.week{
+    width: 1160px;
+    height: 254px;
+    margin: 20px auto;
+    background: white;
+}
+.weekl{
+    width: 252px;
+    height: 241px;
+    float: left;
+}
+.weekl a{
+    width: 200px;
+    height: 200px;
+
+}
+.weekl a img{
+    width: 200px;
+    height: 200px;
+   
+}
+.weekr{
+    width: 890px;
+    height: 200px;
+    float: left;
+    text-align: center;
+}
+.weekr .wtitle{
+    width: 166px;
+    height: 16px;
+    color: black;
+    font-size: 12px;
+   overflow: hidden;
+}
+.weekr .wprice{
+    color: red;
+ }
+ .four{
+     width: 1200px;
+     height: 384px;
+     margin: 50px auto;
+     background: white;
+ }

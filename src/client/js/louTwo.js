@@ -1,9 +1,14 @@
 $(()=>{
     class Smallpic{
-        constructor(data,slidpx){
+        constructor(data,slidpx,wz,width1,width2,width3,width4){
             this.data=data;
             this.root=null;
             this.slidpx=slidpx;
+            this.width1=width1;
+            this.width2=width2;
+            this.width3=width3;
+            this.width4=width4;
+            this.wz=wz;
             this.index=0;
         }
         init(){
@@ -14,7 +19,7 @@ $(()=>{
         }
         rendUI(){
             var html=""
-            this.data.ocontent.map(ele=>html+=` <a href="" class="slidea"><img src=${ele.op} alt="">
+            this.data.ocontent.map(ele=>html+=` <a href="./list.html" class="slidea" style="width:${this.width3}px"><img src=${ele.op} alt="">
                 <div class="smallTitle">${ele.ot}</div>
                 <div class="smallPrice">${ele.opri}</div></a>`).join("")
           var html2="";
@@ -23,22 +28,24 @@ $(()=>{
             }
 
             this.root=document.createElement("div");
-            this.root.className="foorStyle";
+            // this.root.className="foorStyle";
+            // this.root.style.width=this.width;
            this.root.innerHTML=`
-                <a href="" class="foorTitle">
-                    <div class="algin">
+           <div class="foorStyle" style="width:${this.width1}px">
+                <a href="./list.html" class="foorTitle">
+                    <div class="algin" style="width:${this.width2}px">
                         <b>${this.data.titleA}</b>
                         <span>${this.data.titleB}</span>
                     </div>
                 </a>
-                <a href="" class="foorPic">
-                    <img src=${this.data.lapic} alt="">
+                <a href="./list.html" class="foorPic">
+                    <img src=${this.data.lapic} alt="" style="width:${this.width2}px">
                 </a>
-                <div class="foorSlid">
-                    <div class="slideContent">
-                        <ul>${html}</ul>
+                <div class="foorSlid" style="width:${this.width2}px">
+                    <div class="slideContent" style="width:${this.width2}px">
+                        <ul style="width:${this.width4}px">${html}</ul>
                     </div>
-                    <div class="slideBulle">
+                    <div class="slideBulle" style="width:${this.width2}px">
                         ${html2}
                     </div>
                     <div class="contLeft">
@@ -58,11 +65,12 @@ $(()=>{
                         </svg>
                     </div>
                 </div>
+                </div>
            `
             
         }
         insert(){
-            $(".foor_justify").append($(this.root))
+            $(".foor_justify").eq(this.wz).append($(this.root))
         }
 
         control(){
@@ -83,13 +91,19 @@ $(()=>{
 
     }
 
-
+    // 渲染第二个和第四个楼层
     $.getJSON("../../server/louTow.json",function (data) {
             console.log(data);
-            let m=new Smallpic(data[0],333); m.init()
-            let m1=new Smallpic(data[1],333); m1.init()
-            let m2=new Smallpic(data[2],333); m2.init()
+            let m=new Smallpic(data[0],333,0); m.init()
+            let m1=new Smallpic(data[1],333,0); m1.init()
+            let m2=new Smallpic(data[2],333,0); m2.init()
+            // 参数分别为数据、移动的距离、第几个$(".foor_justify")、class="foorStyle"的宽度、class="foorSlid"的宽度
+            // 每一个装着图片的a标签的宽度、ul的宽度
+            let m3=new Smallpic(data[3],555,1,580,555,180,1700); m3.init()
+            let m4=new Smallpic(data[4],555,1,580,555,180,1700); m4.init()
             
         }
     );
+    $(".foor_justify").eq(1).css("margin-bottom","50px")
+
 })

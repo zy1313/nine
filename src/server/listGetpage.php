@@ -11,7 +11,7 @@ $total = mysqli_num_rows($result);
 # Math.floor()
 # Math.ceil()
 
-$count = ceil($total  / 20);
+$count = ceil($total  / 16);
 
 # 返回
 $data  = array("count"=>$count);  
