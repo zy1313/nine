@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+.second-nav {
+    width: 220px;
+    height: 480px;
+    background: #818181;
+    float: left;
+    position: relative;
+}
+
+.second-nav-case {
+    box-sizing: border-box;
+    width: 220px;
+    height: 80px;
+    padding: 10px;
+    
+    /* background: cornflowerblue; */
+}
+
+.second-nav-case:hover {
+    background: #191919;
+}
+
+
+.second-nav-case-1 {
+    width: 100%;
+    height: 20px;
+    float: left;
+    margin-top: 2px;
+    /* background: cyan; */
+}
+
+.second-nav-case-1 i{
+display: inline-block;
+width: 16px;
+height: 17px;
+float: left;
+margin-right: 4px;
+}
+
+
+.second-nav-case-1 h3 {
+    width: 56px;
+    height: 19px;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: bold;
+    color: #fff;
+    float: left;
+}
+
+.second-nav-case-1 span {
+    height: 19px;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: bold;
+    color: #fff;
+    float: right;
+}
+
+.second-nav-case-2 {
+    width: 200px;
+    margin-top: 3px;
+    height: 36px;
+    float: left;
+    /* background: darkcyan; */
+}
+
+.second-nav-case-2 a {
+    display: inline-block;
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    float: left;
+    margin-right: 5px;
+    color: #fff;
+}
+
+.second-nav-right {
+    width: 760px;
+    height: 480px;
+    position: absolute;
+    top: 0px;
+    left: 220px;
+    z-index: 10;
+    box-shadow: -2px 0px 17px -9px #9c9c9c;
+    background: #fff;
+    display: none;
+}
+
+.second-nav-right-box {
+    width: 510px;
+    height: 100%px;
+    padding: 0 10px;
+    margin: 0 10px;
+    position: relative;
+
+    /* background: pink; */
+}
+
+.second-nav-right-box dl {
+    width: 100%;
+    height: 24px;
+    float: left;
+    padding-top: 10px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.second-nav-right-box dt {
+    width: 70px;
+    height: 24px;
+    float: left;
+    font-size: 12px;
+    line-height: 24px;
+    color: #f21c1c;
+}
+
+.second-nav-right-box dd {
+    width: 440px;
+    height: 24px;
+    float: left;
+}
+
+.second-nav-right-box dd a {
+    display: inline-block;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    float: left;
+    color: #333;
+    margin-right: 5px;
+}
+
+.second-nav-right-box dd a:hover {
+    color: #f21c1c;
+}
+
+.second-nav-right-img {
+    width: 200px;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+.second-nav-right-img img{
+    width: 200px;
+
+}
+
+.second-nav-right-img img:nth-child(1) {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.cur{
+    display: block;
+}

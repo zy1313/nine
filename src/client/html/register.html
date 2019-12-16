@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/bottom.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/captcha.js"></script>
+    <script src="../js/register.js"></script>
+    
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="log_head">
+            <h1 class="log_logo left">
+                <a href="/">
+                    <img src="//img2.ch999img.com/static/images/new-logo.png" width="100" height="50">
+                    <span>账号注册</span>
+                </a>
+            </h1>
+        </div>
+        <div class="login_wrap">
+            <div class="xxknr">
+                <div class="login_item">
+                    <svg aria-hidden="true" width="10" height="16" viewBox="0 0 320 512" focusable="false"
+                        class="grey-9 fa-icon" data-v-bd02c0ec="">
+                        <path
+                            d="M272 0c26.5 0 48 21.5 48 48v416c0 26.5-21.5 48-48 48h-224c-26.5 0-48-21.5-48-48v-416c0-26.5 21.5-48 48-48h224zM160 480c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zM272 372v-312c0-6.6-5.4-12-12-12h-200c-6.6 0-12 5.4-12 12v312c0 6.6 5.4 12 12 12h200c6.6 0 12-5.4 12-12z">
+                        </path>
+                    </svg>
+                    <input type="text" id="phone" placeholder="手机号码">
+                    <div class="red">* 手机号码非常重要，找回密码及购物都会用到</div>
+                </div>
+                <div class="login_item">
+                    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 512 512" focusable="false"
+                        class="grey-9 fa-icon" data-v-bd02c0ec="">
+                        <path
+                            d="M466.5 83.7c17.8 7.4 29.5 24.9 29.5 44.3 0 221.3-135.9 344.6-221.6 380.3-11.8 4.9-25.1 4.9-36.9 0-107-44.6-221.5-181.8-221.5-380.3 0-19.4 11.7-36.9 29.6-44.3l192-80c4.9-2 13.2-3.7 18.5-3.7 5.3 0 13.6 1.6 18.5 3.7zM256.1 446.3c93.7-46.6 172.5-156.3 175.8-307.7l-175.9-73.3z">
+                        </path>
+                    </svg>
+                    <input type="text" id="pic" placeholder="图形验证码">
+                    <canvas></canvas>
+                </div>
+               
+                <div class="login_item">
+                    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 512 512" focusable="false"
+                        class="grey-9 fa-icon" data-v-bd02c0ec="">
+                        <path
+                            d="M502.3 190.8c3.9-3.1 9.7-0.2 9.7 4.7v204.5c0 26.5-21.5 48-48 48h-416c-26.5 0-48-21.5-48-48v-204.4c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7 0.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c-23.2 0.4-56.6-29.2-73.4-41.4-132.7-96.3-142.8-104.8-173.4-128.7-5.8-4.6-9.2-11.5-9.2-18.9v-19c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v19c0 7.4-3.4 14.4-9.2 18.9-30.6 24-40.7 32.4-173.4 128.7-16.8 12.2-50.2 41.8-73.4 41.4z">
+                        </path>
+                    </svg>
+                    <input type="text" id="mes" placeholder="短信验证码">
+                    <a href="javascript:void(0);" class="pmes">|发送验证码</a>
+                </div>
+                <div class="login_item">
+                    <input type="text" id="passwordA" placeholder="请设置6位密码(数字字母)">
+                   
+                </div>
+                <div class="login_item">
+                    <input type="text" id="passwordB" placeholder="再次输入密码">
+                   
+                </div>
+                <a href="javascript:void(0);" class="next">
+                    <span >注册</span>
+                </a>
+               <div class="title">请输入正确的手机号码</div> 
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- <div class="bottom">
+        <div class="bottom-wrap">
+            <div class="foot-nav">
+                <a href="https://www.9ji.com/doc/1/2">常见问题</a>
+                <i>|</i>
+                <a href="https://www.9ji.com/doc/1/74">供应商申请</a>
+                <i>|</i>
+                <a href="https://www.9ji.com/doc/1/176">配送方式</a>
+                <i>|</i>
+                <a href="https://job.9ji.com/">招聘信息</a>
+                <i>|</i>
+                <a href="https://www.9ji.com/doc/1/43">关于我们</a>
+                <i>|</i>
+                <a href="https://www.9ji.com/doc/1/41">联系我们</a>
+                <i>|</i>
+                <a href="https://www.9ji.com/login?redirect=%2Fmember%2Fcomplaint%2Fadd">投诉建议</a>
+                <i>|</i>
+                <a href="https://www.9ji.com/AreaPrice/">地区报价</a>
+                <i>|</i>
+                <a href="https://it.9ji.com/">IT服务</a>
+            </div>
+            <div class="bottom-copy">
+                <p>各门店营业时间：周一至周日 09:00-21:30
+                    &nbsp;&nbsp;&nbsp;&nbsp;全国服务热线：400-008-3939&nbsp;&nbsp;&nbsp;&nbsp;工作时间：周一至周日 09:00-21:30</p>
+                <p>网站ICP备案号：
+                    <a href="https://www.miibeian.gov.cn/" target="_blank">滇ICP备06002001号</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;电信业务经营许可证：滇B2-20180054号&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=53010202000261"
+                        target="_blank">滇公网安备53010202000261号</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
+                <p>Copyright © 2006 - 2019 九机网 All Rights Reserved</p>
+                <p>云南九机信息技术有限公司版权所有</p>
+            </div>
+            <div class="bottom-link">
+                <section>
+                    <a href="http://report.12377.cn:13225/toreportinputNormal_anis.do" target="_blank"
+                        title="中国互联网违法和不良信息举报中心" class="link1">
+                    </a>
+                    <a href="https://si.trustutn.org/info?sn=309160601022242710319&certType=1" class="link2"></a>
+                    <a href="https://v.yunaq.com/certificate?site=www.9ji.com&at=realname" target="_blank"
+                        class="link3"></a>
+                    <a href="https://wljg.ynaic.gov.cn:80/ynwjww/indexquery/indexqueryAction!dizview.dhtml?chr_id=85bbb593882a8258c2e0cb89c32b6880&bus_ent_id=530100D000835657&bus_ent_chr_id=6fcadc803af24ef48865aa83ccd88b96"
+                        target="_blank" title="云南网监电子标识" alt="云南网监电子标识" class="link4"></a>
+                    <a href="https://www.yn.cyberpolice.cn/" target="_blank" class="link5"></a>
+                    <a href="https://www.landui.com/?9ji" target="_blank" title="IDC服务提供商" class="link6"></a>
+                </section>
+            </div>
+            
+        </div>
+    </div> -->
+
+    <div class="foot"></div>
+    <script>
+        $(".foot").load("./bottom2.html .bottom")
+    </script>
+</body>
+
+</html>

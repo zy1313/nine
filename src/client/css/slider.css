@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li,ul{
+list-style: none;
+}
+.box{
+    width: 760px;
+    height: 480px;
+    /* margin: 0 auto; */
+    position: absolute;
+    left:-133px;
+}
+.box .slider-img{
+    position: absolute;
+    left: 0;
+    left: 0;
+}
+.box .check{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 100%;
+    height: 50px;
+}
+.box .check-r{
+    float: right;
+    display: block;
+    width: 40px;
+    height: 80px;
+    font-size: 40px;
+    background:#713a39;
+    opacity: 0.4;
+    text-align:center;
+    line-height: 80px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+.box .check-l{
+    float: left;
+    display: block;
+    width: 40px;
+    height: 80px;
+    font-size: 40px;
+    background:#713a39;
+    opacity: 0.4;
+    text-align:center;
+    line-height: 80px;
+    cursor: pointer;
+    margin-left: 4px; 
+}
+.box .btn{
+    position: absolute;
+    z-index: 2;
+    bottom: 15px;
+    left: 290px;
+}
+.box .slider-btn{
+    /* display:block; */
+    float: left;
+    width: 30px;
+    height: 5px;
+    /* text-align: center;
+    line-height: 20px;
+    font-size: 10px;
+    color: aliceblue; */
+    background: #333333;
+    /* border-radius: 100%; */
+    margin-right: 5px;
+    cursor: pointer;
+    
+}
+.box .active{
+    background-color: red;
+}
+

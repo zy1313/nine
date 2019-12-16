@@ -1,0 +1,220 @@
+    @charset "UTF-8";
+
+    /* 重置样式 */
+    a,
+    article,
+    aside,
+    body,
+    button,
+    dd,
+    details,
+    div,
+    dl,
+    dt,
+    figcaption,
+    figure,
+    footer,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    header,
+    hgroup,
+    img,
+    input,
+    li,
+    nav,
+    ol,
+    p,
+    section,
+    select,
+    table,
+    tbody,
+    td,
+    textarea,
+    th,
+    tr,
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    em,
+    i {
+        font-style: normal
+    }
+
+    ul,
+    ol,
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        border: 0;
+        display: block;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    html {
+        background: #f6f6f6;
+    }
+
+    .clear-fix::after {
+        content: " ";
+        display: block;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        clear: both;
+    }
+
+    .wrapper {
+        width: 960px;
+        height: 544px;
+        font-family: 'Microsoft YaHei';
+        margin: 10px auto;
+    }
+
+    .log_head {
+        float: left;
+        width: 100%;
+        height: 80px;
+    }
+
+    .log_logo a img {
+        float: left;
+        width: 100px;
+        height: 50px;
+    }
+
+    .log_logo a span {
+        float: left;
+        text-decoration: none;
+        color: #c80f1e;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        border-left: 2px solid #d6d6d6;
+        padding-left: 40px;
+        padding-top: 8px;
+        margin-left: 40px;
+    }
+
+    .login_wrap {
+        background: #fff url(../img/reg_bg.png) no-repeat right center;
+        border: solid 8px #f0f0f0;
+        min-height: 425px;
+        margin-bottom: 20px;
+        padding-bottom: 30px;
+        float: left;
+        width: 960px;
+    }
+    .xxknr {
+        width: 960px;
+        min-height: 301px;
+        float: left;
+    }
+
+    .xxknr .login_item{
+        width: 898px;
+        height: 61px;
+        margin: 0 auto;
+        border-bottom: 1px solid #cccccc;
+    }
+    .xxknr .login_item #phone,.xxknr .login_item  #passwordA,.xxknr .login_item  #passwordB{
+        width: 400px;
+        height: 31px;
+        margin: 14px 20px;
+        line-height: 30px;
+        border: none;
+        outline: none;
+              
+    }
+    .xxknr .login_item .red{
+        display: inline-block;
+        color: red;
+        width: 400px;
+        height: 20px;
+              
+    }
+    .xxknr .login_item #pic,#mes{
+    width: 732px;
+    height: 30px;
+    margin: 14px 20px;
+    line-height: 30px;
+    border: none;
+    outline: none;
+}
+              
+
+    .xxknr .login_item .pmes{
+        display: inline-block;
+        width: 88px;
+        height: 30px;
+        color: #cccccc;     
+    }
+
+    .xxknr .login_item:nth-child(2){
+        position: relative;
+    }
+    .xxknr .login_item canvas{
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 120px;
+        height: 40px;
+       
+    }
+    .xxknr .next{
+         display:block; 
+        text-decoration: none;
+        color: white
+
+       /* padding-top: 20px; */
+    }  
+      .xxknr .next span {
+       display: block;
+       width: 120px;
+       height: 40px;
+        background: #cccccc; 
+        margin-left: 20px;
+        border-radius: 5px;
+        text-align: center;
+         margin-top: 30px;
+              
+    }
+     .title{
+    /* display: block; */
+    position: relative;
+    width: 200px;
+    height: 30px;
+    background: black;
+    color: white;
+    opacity: .6;
+    border-radius: 5px;
+    left: 372px;
+    top: 0px;
+    display: none;
+    }

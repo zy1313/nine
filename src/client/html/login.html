@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/bottom.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/Cookie.js"></script>
+    <script src="../js/login.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="login-top">
+            <div class="log_head">
+                <h1 class="log_logo left">
+                    <a href="/">
+                        <img src="//img2.ch999img.com/static/images/new-logo.png" width="100" height="50">
+                        <span>欢迎登录</span>
+                    </a>
+                </h1>
+            </div>
+        </div>
+        <div class="login-content" style="background:#000 url('https://img2.ch999img.com/newstatic/944/47a86aac72ed10.jpg') no-repeat center top;">
+            <div class="login-center">
+                <div class="login-right">
+                    <div class="login-right-top">
+                        <a class="xs">扫码登录</a>
+                        <i>|</i>
+                        <a class="">账户登录</a>
+                    </div>
+                    <!-- 选项卡切换 -->
+                    <section>
+                        <div class="login-right-center" style="display: block;">
+                            <img class="login-right-center-bigPic" src="../img/erWeiMa_03.jpg" alt="">
+                            <div class="login-right-center-2weima"><img src="../img/xiao2weima_03.jpg" alt="">
+                                <p>打开<a href="">九机APP</a>扫码登录</p>
+                            </div>
+                        </div>
+                        <div class="login-right-center" style="display: none;">
+                            <div class="login-right-center-A">
+                                <img src="../img/xiaoren_03.jpg" alt="">
+                                <input id="username-ID" type="text" placeholder="用户名/手机号">
+                            </div>
+                            <div class="login-right-center-A">
+                                <img src="../img/xiaosuo_03.jpg" alt="">
+                                <input id="password-ID" type="password" placeholder="密码">
+                            </div>
+                            <div class="login-right-center-B">
+                                <a href="">短信验证码登录</a>
+                                <a href="https://www.9ji.com/acount/findpwd.aspx">找回密码</a>
+                            </div>
+                            <a class="login-button" href="javascript:void(0);">
+                                <span>登录</span>
+                            </a>
+                        </div>
+                    </section>
+                    <a class="login-change" href="http://127.0.0.1/code/JiuJiAnli/src/html/register.html">
+                        <span>立即注册</span>
+                        <img src="../img/xiaojiantou_03.jpg" alt="">
+                    </a>
+                    <div class="login-right-line">&nbsp;&nbsp;&nbsp;<span>—————— </span>其他登录方式<span> ——————</span>
+                    </div>
+                    <div class="login-deepLogo">
+                        <a
+                            href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=token&client_id=100302635&redirect_uri=https://www.9ji.com/login%3fredirect=/"><img
+                                src="../img/QQLogo_03.jpg" alt=""><span>QQ</span></a>
+                        <i>|</i>
+                        <a href=""><img src="../img/WeChatLogo_03.jpg" alt=""><span>微信</span></a>
+                        <a href="">&nbsp;&nbsp;&nbsp;三个月免登录</a>
+                        <input type="checkbox" id="check">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    
+   <div class="foot"></div>
+   <script>
+      $(".foot").load("./home.html .bottom")
+   </script>
+</body>
+
+</html>

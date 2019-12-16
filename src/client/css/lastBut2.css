@@ -1,0 +1,218 @@
+@charset "utf-8";
+ .find2 {
+    width: 100%;
+    height: 64px;
+    box-sizing: border-box;
+    background: #f5f5f5;
+    font-size: 42px;
+    line-height: 64px;
+    text-align: center;
+    color: #333;
+
+}
+.lastBut2 {
+    width: 100%;
+    height: 256px;
+    background:white;
+
+}
+
+.but2-topWrap {
+    width: 100%;
+    height: 110px;
+    padding-bottom: 10px;
+    /* background: palevioletred; */
+}
+
+.but2-top {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #dfdfdf;
+    position: relative;
+    float: left;
+    /* background: lightgrey; */
+}
+
+.but2-top-content {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    /* background: lightsalmon; */
+}
+
+.but2-top-content a {
+    display: inline-block;
+    width: 216px;
+    height: 50px;
+    float: left;
+    margin-right: 30px;
+    margin-top: 32px;
+    /* background: lime; */
+}
+
+.but2-top-content a:nth-child(5) {
+    margin-right: 0;
+}
+
+.but2-top-content a dt,
+.but2-top-content a dd {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+.but2-top-content a dd h4 {
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #262626;
+    text-align: center;
+}
+
+.but2-top-content a dd p {
+    width: 160px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #9c9c9c;
+    text-align: center;
+}
+
+.but2-footWrap {
+    width: 100%;
+    height: 100px;
+    float: left;
+    padding: 20px 0 16px;
+    /* background: mediumpurple; */
+}
+
+.but2-foot {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    /* background: plum; */
+}
+
+.but2-foot dl {
+    float: left;
+    width: 84px;
+    height: 99px;
+    margin-right: 92px;
+    text-align: left;
+    /* background: powderblue; */
+}
+
+.but2-foot dl dt {
+    width: 84px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    color: #333;
+    float: left;
+}
+
+.but2-foot dl dd {
+    width: 84px;
+    height: 66px;
+    float: left;
+}
+
+.but2-foot dl dd a {
+    display: block;
+    width: 100%;
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #a5a5a5;
+}
+.but2-foot dl dd a:hover{
+    text-decoration: underline;
+}
+
+.but2-foot-right {
+    width: 250px;
+    height: 99px;
+    float: left;
+    /* background: lightcoral; */
+}
+
+.but2-foot-right dl {
+    width: 250px;
+    height: 70px;
+    margin: 0;
+    float: left;
+    /* background: lightsalmon; */
+}
+
+.but2-foot-right dl dt {
+    display: inline-block;
+    float: left;
+    width: 70px;
+    height: 70px;
+}
+
+.but2-foot-right dl dt img {
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 5px;
+}
+
+.but2-foot-right dl dd {
+    float: left;
+    height: 100%;
+    width: 175px;
+}
+
+.but2-foot-right dl dd h4 {
+    width: 175px;
+    height: 21px;
+    float: left;
+    font-size: 14px;
+    color: #333;
+    line-height: 21px;
+    text-align: center;
+}
+
+.but2-foot-right dl dd p {
+    width: 175px;
+    height: 36px;
+    float: left;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #9c9c9c;
+    text-align: center;
+    line-height: 16px;
+}
+
+.but2-foot-right-deep {
+    width: 250px;
+    height: 18px;
+    float: left;
+    margin-top: 10px;
+}
+
+.but2-foot-right-deep a {
+    display: inline-block;
+    width: 74px;
+    height: 18px;
+    margin-right: 10px;
+    float: left;
+    font-size: 12px;
+    color: #333;
+}
+.but2-foot-right-deep a:hover{
+    color: #f21c1c;
+}
+
+.but2-foot-right-deep a i {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+}
+
+.but2-foot-right-deep a i img {
+    width: 16px;
+    height: 16px;
+}
