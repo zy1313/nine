@@ -11,7 +11,8 @@ $(()=>{
         }
         rendUI(){
         var html=""
-        html+=this.data.pic.map((ele,index)=>`<a href="" class="small"><img src=${ele} alt="" class="${index==0?"active":""}"></a>`).join("");
+        // JSON.parse()
+        html+=JSON.parse(this.data.pic).map((ele,index)=>`<a href="" class="small"><img src=${ele} alt="" class="${index==0?"active":""}"></a>`).join("");
         this.root=document.createElement("li");
         this.root.innerHTML=`<a href="" class="picb"><img src=${this.data.img} alt=""></a>
         <div class="picm">${html}</div>
@@ -49,7 +50,7 @@ $(()=>{
             
     //     }
     // });
-
+// 发送网络请求获取页码
 $.ajax({
     type: "get",
     url: "../../server/listGetpage.php",
@@ -64,5 +65,25 @@ $.ajax({
         $("#page").html(ha)
     }
 });
+
+getData(1)
+// 发送网络请求获取数据
+function getData(index){
+    $.ajax({
+        type: "get",
+        url: "../../server/listGetdata.php",
+        data: `page=${index}`,
+        dataType: "json",
+        success: function (response) {
+            //  let result=JSON.parse(response)
+            response.forEach(ele=>new List(ele).init())
+            console.log(response);
+            
+            
+        }
+    });
+}
+
+
 
 })

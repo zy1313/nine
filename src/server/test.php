@@ -21,7 +21,7 @@ for($i = 0;$i<count($data);$i++)
   $price = $data[$i]["price"];
   $des = $data[$i]["des"];
   $pic = $data[$i]["pic"];
-  $sql = "INSERT INTO `goods` (`good_id`, `img`, `title`, `price`, `des`, `pic`) 
+  $sql = "INSERT INTO `goods1` (`good_id`, `img`, `title`, `price`, `des`, `pic`) 
         VALUES ($id, '$img', '$title', $price, '$des', '$pic')";
   mysqli_query($db, $sql);
 }
