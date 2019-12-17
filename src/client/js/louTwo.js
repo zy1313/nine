@@ -14,7 +14,8 @@ $(()=>{
         init(){
             this.rendUI();
             this.insert();
-            this.control()
+            this.control();
+            this.addClick();
 
         }
         rendUI(){
@@ -72,7 +73,7 @@ $(()=>{
         insert(){
             $(".foor_justify").eq(this.wz).append($(this.root))
         }
-
+        // 左右两边的控制按钮
         control(){
             $(this.root).find(".contLeft").click(()=>{
                 this.index--;
@@ -86,6 +87,19 @@ $(()=>{
                 $(this.root).find("ul")[0].style.transform=`translateX(-${this.slidpx*this.index}px)`;
                 $(this.root).find(".dot").eq(this.index).addClass("act").siblings().removeClass("act");
               
+            })
+        }
+        // 点击小圆点进行图片切换
+        addClick(){
+            let self=this;
+            var ospans=this.root.querySelectorAll(".dot");
+            Array.from(ospans).forEach((ele,index)=>{
+                ele.onclick=function(){
+                    console.log("+++");
+                Array.from(ospans).forEach(ele => ele.classList.remove("act"));
+                this.classList.add("act");
+                self.root.querySelector("ul").style.transform=`translateX(-${self.slidpx*index}px)`;
+                }
             })
         }
 
