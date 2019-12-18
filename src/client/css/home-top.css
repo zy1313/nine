@@ -205,7 +205,7 @@
     width: 1200px;
     height: 200px;
     position: absolute;
-    left: -133px;
+    left: 0px;
     top: 33px;
     background: white;
     z-index: 10;
@@ -353,6 +353,19 @@
     height: 100%;
     float: left;
     background:white;
+}
+
+/* 二级导航栏在列表页中的复用 */
+.sevList .second-nav{
+    background: red;
+}
+.nav-foot-left p{
+    width: 220px;
+    height: 47px;
+    line-height: 47px;
+    text-align: center;
+    background: red;
+    color: white;
 }
 
 .nav-foot-right {
@@ -574,4 +587,66 @@ background: white;
      height: 384px;
      margin: 50px auto;
      background: white;
+ }
+
+ /* 右边的固定定位 */
+ .tool{
+    width: 35px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #333;
+    z-index: 79;
+    /* -webkit-transition: width .3s ease;
+    -o-transition: width .3s ease; */
+    transition: width .3s ease;
+ }
+ .tool .tool-item{
+     width: 35px;
+     height: 210px;
+     /* background: blue; */
+    position: absolute;
+    top: 36%;
+
+ }
+ .tool .toolButtom{
+     position: absolute;
+     bottom: 0;
+ }
+ .tool-item .item,.toolButtom .item{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+ }
+ /* .tool-item .item img{
+    text-align: center;
+    vertical-align: middle;
+ } */
+ .tool-item .item a,.toolButtom .item a{
+    display: flex;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+ }
+ .tool-item .item a img{
+    vertical-align: top;
+ }
+ .tool-item .item a span,.toolButtom .item a span{
+    position: absolute;
+    right: 45px;
+    top: 0;
+    height: 35px;
+    display: block;
+    opacity: 0;
+    background: #333;
+    width: 70px;
+    text-align: center;
+    transition: all .3s ease;
+    line-height: 35px;
+    visibility: hidden;
+
  }

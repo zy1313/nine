@@ -17,7 +17,7 @@ $(() => {
                 var res = "";
                 for (var j = 0; j < data[i].num3.length; j++) {
                     var html2 = data[i].num3[j].map(function (e) {
-                        return `<a href="">${e}</a>`
+                        return `<a href="./list.html">${e}</a>`
                     }).join("")
                     var html3 = `<dl>
                                     <dt>${data[i].num2[j]}</dt>

@@ -145,5 +145,40 @@ $(() => {
             })
         });
 
+        // // 渲染固定定位
+        // var ofix=[
+        //   {"pimg":"https://img2.ch999img.com/newstatic/1381/01437ad73129fceb.png",
+        //     "oc":"购物车"
+        //     },
+        //     {"pimg":"https://img2.ch999img.com/newstatic/1379/01437a0a38bf22b0.png",
+        //     "oc":"附近门店"
+        //     },
+        //     {"pimg":"https://img2.ch999img.com/newstatic/1383/01437ada542d1a04.png",
+        //     "oc":"咨询客服"
+        //     },
+        //     {"pimg":"https://img2.ch999img.com/newstatic/1378/01437ae3894b6f1c.png",
+        //     "oc":"投诉意见"
+        //     },
+        //     {"pimg":"https://img2.ch999img.com/newstatic/1377/01437ae979c6dd1d.png",
+        //     "oc":"<img src='https://img2.ch999img.com/newstatic/1381/01456921b634952f.jpg'>"
+        //     },
+        //     {"pimg":"https://img2.ch999img.com/newstatic/1379/01437af815221659.png",
+        //     "oc":"产品对比"
+        //     }]  
+        // var fixhtml="";
+        // fixhtml+=ofix.map(ele=>`<div class="item"><a href=""><img src=${ele.pimg} alt=""><span>${ele.oc}</span></a></div>`).join("")
+        // $(".tool-item").html(fixhtml)
+
+        // 固定定位的划过效果
+        $(".item").hover(function(){
+            $(this).css("background","#f21c1c").siblings().css("background","#333")
+            $(this).children().children("span").css("visibility","visible").css("opacity","1")
+        },function(){
+            $(this).css("background","#333").children().children("span").css("visibility","hidden").css("opacity","0")
+        })
+
+        $(".toolButtom").click(function(){           
+            window.scrollTo(0,0)   
+        })
 
 })

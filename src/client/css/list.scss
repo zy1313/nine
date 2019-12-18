@@ -1,5 +1,6 @@
 .listWarp {
     width: 1200px;
+    height: 1800px;
     margin: 0 auto;
 
     .listSection {
@@ -217,7 +218,7 @@
         height: 20px;
         // background: #cccccc;
         margin: 0 auto;
-        margin-bottom: 80px;
+        margin-bottom: 50px;
 
         a {
             background: #cccccc;
@@ -232,11 +233,16 @@
     }
 
     #page .active {
-        background: pink;
+        background: red;
     }
 
     .listTop .active {
-        background: pink;
-        color: black;
+        background: red;
+        
     }
 }
+// .foot{
+//     position: relative;
+//     bottom: 0;
+//     left: 0;
+// }

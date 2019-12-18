@@ -1,115 +1,141 @@
 $(() => {
-
-    // 完成每个li的功能
-    class List {
-        constructor(data) {
-            this.data = data;
-            this.root = null;
-        }
-        init() {
-            this.rendUI();
-            this.toggle();
-        }
-        rendUI() {
-            var html = ""
-            html += JSON.parse(this.data.pic).map((ele, index) => `<a href="" class="small"><img src=${ele} alt="" class="${index==0?"active":""}"></a>`).join("");
-            this.root = document.createElement("div");
-            this.root.innerHTML = `<li class="listli"><a href="" class="picb"><img src=${this.data.img} alt=""></a>
-        <div class="picm">${html}</div>
-        <a href="" class="title">${this.data.title}</a>
-        <div class="pop"><span>￥${this.data.price}</span></div>
-        <p>${this.data.des}</p></li>`
-            $(".content").append($(this.root));
-            // $(".content").html($(this.root));
-        }
-
-        toggle() {
-            // 图片切换
-            $(this.root).find(".small>img").on("mouseenter", function () {
-                $(this).addClass("active").parent().siblings().children().removeClass("active");
-                let osrc = $(this).attr("src")
-                $(this).parent().parent().prev().children("img").attr("src", osrc)
-
-            })
-            // 给li标签添加边框
-            $(this.root).find(".listli").hover(function () {
-                $(this).addClass("current")
-            }, function () {
-                $(this).removeClass("current")
-            })
-        }
-    }
-
-
-    // 发送网络请求获取页码
-    $.ajax({
-        type: "get",
-        url: "../../server/listGetpage.php",
-        // data: "data",
-        dataType: "json",
-        success(data) {
-            console.log(data.count);
-            var ha = "";
-            for (let i = 0; i < data.count; i++) {
-                ha += `<a href="javascript:;" class="${i==0?"active":""}">${i+1}</a>`
+    // 异步请求，先完成列表页的功能，再传递参数
+    new Promise(function (resolve, reject) {
+        // 完成每个li的功能渲染并切换
+        class List {
+            constructor(data) {
+                this.data = data;
+                this.root = null;
             }
-            $("#page").html(ha);
-            $("#page>a").click(function () {
-                $(this).addClass("active").siblings().removeClass("active");
-                $(".content").html("");
-                getData($(this).text(), 0)
-            })
-        }
-    });
+            init() {
+                this.rendUI();
+                this.toggle();
+            }
+            rendUI() {
+                var html = ""
+                html += JSON.parse(this.data.pic).map((ele, index) => `<a href="javascript:" class="small"><img src=${ele} alt="" class="${index==0?"active":""}"></a>`).join("");
+                this.root = document.createElement("div");
+                this.root.innerHTML = `<li class="listli"><a href="javascript:" class="picb"><img src=${this.data.img} alt=""></a>
+                <div class="picm">${html}</div>
+                <a href="javascript:" class="title">${this.data.title}</a>
+                <div class="pop"><span>￥${this.data.price}</span></div>
+                <p>${this.data.des}</p></li>`
+                $(".content").append($(this.root));
+                // $(".content").html($(this.root));
+            }
 
-    getData(1, 0)
-    // 发送网络请求获取数据
-    function getData(index, type) {
+            toggle() {
+                // 图片切换
+                $(this.root).find(".small>img").on("mouseenter", function () {
+                    $(this).addClass("active").parent().siblings().children().removeClass("active");
+                    let osrc = $(this).attr("src")
+                    $(this).parent().parent().prev().children("img").attr("src", osrc)
+
+                })
+                // 给li标签添加边框
+                $(this.root).find(".listli").hover(function () {
+                    $(this).addClass("current")
+                }, function () {
+                    $(this).removeClass("current")
+                })
+            }
+        }
+
+
+        // 发送网络请求获取页码
         $.ajax({
             type: "get",
-            url: "../../server/listGetdata.php",
-            data: `page=${index}&sortType=${type}`,
+            url: "../../server/listGetpage.php",
+            // data: "data",
             dataType: "json",
-            success: function (response) {
-                //  let result=JSON.parse(response)
-                response.forEach(ele => new List(ele).init())
-                console.log(response);
-
-
+            success(data) {
+                console.log(data.count);
+                var ha = "";
+                for (let i = 0; i < data.count; i++) {
+                    ha += `<a href="javascript:;" class="${i==0?"active":""}">${i+1}</a>`
+                }
+                $("#page").html(ha);
+                $("#page>a").click(function () {
+                    $(this).addClass("active").siblings().removeClass("active");
+                    $(".content").html("");
+                    getData($(this).text(), 0)
+                })
             }
         });
-    }
 
-    // 排序功能
-    $(".listTop>span").click(function () {
-        $(this).addClass("active").siblings().removeClass("active");
-        $(".content").html("");
-        getData(1, $(this).index())
+        getData(1, 0)
+        // 发送网络请求获取数据并渲染列表正文
+        function getData(index, type) {
+            $.ajax({
+                type: "get",
+                url: "../../server/listGetdata.php",
+                data: `page=${index}&sortType=${type}`,
+                dataType: "json",
+                success: function (response) {
+                    response.forEach(ele => new List(ele).init())
+                    // console.log(response);
+                    big()
+                    resolve()
+
+                }
+            });
+        }
+
+        // 排序功能
+        $(".listTop>span").click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".content").html("");
+            getData(1, $(this).index())
+            big()
+        })
+
+
+        // 异步请求，先完成列表页的功能，再传递参数
+    }).then(function () {
+        console.log($(".listli"));
+        big()
+
 
     })
 
+    // 为每一个li添加点击事件，获取想要的值作为参数放在URL路径中传到详情页
+    function big() {
+        $(".listli").click(function () {
+            var ltitle = $(this).find(".title").text();
+            var lprice = $(this).find(".pop").children("span").text();
+            var oimg0 = $(this).find(".picm").children("a").eq(0).children().attr("src");
+            var oimg1 = $(this).find(".picm").children("a").eq(1).children().attr("src");
+            var oimg2 = $(this).find(".picm").children("a").eq(2).children().attr("src");
+            var oimg3 = $(this).find(".picm").children("a").eq(3).children().attr("src");
+            var queryString = `title=${ltitle}&lprice=${lprice}&oimg0=${oimg0}&oimg1=${oimg1}&oimg2=${oimg2}&oimg3=${oimg3}`;
+            window.location.href = "./details.html?" + queryString;
+
+        })
+    }
+
+
     // 列表页左边部分的展开功能
-    let flag=true;
-    $(".aTow").click(()=>{
+    let flag = true;
+    $(".aTow").click(() => {
         // 每次点击+ - 号会切换
-        if(flag){
-           $(".aTow").css("border","red 1px solid").css("color","red").text("-") 
-           flag=false
-        }else{
-            $(".aTow").css("border","black 1px solid").css("color","black").text("+") 
-            flag=true
+        if (flag) {
+            $(".aTow").css("border", "red 1px solid").css("color", "red").text("-")
+            flag = false
+        } else {
+            $(".aTow").css("border", "black 1px solid").css("color", "black").text("+")
+            flag = true
         }
         // 切换展开收起
         $(".odd").toggle()
     })
     // 滑过时变颜色
-    $(".odd").children().hover(function(){
-        $(this).css("color","red").siblings().css("color","#cccccc")
+    $(".odd").children().hover(function () {
+        $(this).css("color", "red").siblings().css("color", "#cccccc")
     })
 
 
 
-// 渲染列表页的左边部分
+    // 渲染列表页的左边部分
     var res = [{
         "otitle": "浏览了最终购买了",
         "des": [{
@@ -165,11 +191,11 @@ $(() => {
             "op": "￥159"
         }]
     }]
-   var h=res.map(ele=>{
-      var result= ele.des.map(ele=>
-        ` <a href=""><img src=${ele.osrc} alt=""><div class="achild"><p>${ele.ot}</p><p>${ele.op}</p> </div></a>`).join("")
+    var h = res.map(ele => {
+        var result = ele.des.map(ele =>
+            ` <a href=""><img src=${ele.osrc} alt=""><div class="achild"><p>${ele.ot}</p><p>${ele.op}</p> </div></a>`).join("")
         return `<div class="cate-list"><h4>${ele.otitle}</h4>${result}</div>`
-   }).join("")
-    document.querySelector(".listCateWarp").innerHTML=h;
+    }).join("")
+    document.querySelector(".listCateWarp").innerHTML = h;
 
 })
