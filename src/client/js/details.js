@@ -3,7 +3,7 @@ $(() => {
     var str = decodeURI(window.location.search.slice(1));
     console.log(str);
     if (str.length == 0) str = `title=华为 nova 5i 全网通版 幻夜黑 8GB+128GB  【火热销售】6.4英寸极点全面屏，海思麒麟710&lprice=￥299&oimg0=https://img2.ch999img.com/pic/product/440x440/20190621164124730.jpg.webp&oimg1=https://img2.ch999img.com/pic/product/440x440/20190621164111257.jpg.webp&oimg2=https://img2.ch999img.com/pic/product/440x440/20190621164114504.jpg.webp
-&oimg3=https://img2.ch999img.com/pic/product/440x440/20191111112612289.jpg.webp`;
+    &oimg3=https://img2.ch999img.com/pic/product/440x440/20191111112612289.jpg.webp`;
 
     function queryString2Obj(queryString) {
         var o = {};
@@ -37,6 +37,65 @@ $(() => {
         Width: 80, //小图的宽度 宽度 + 左右边框 左右padding
         BoPa: 8 //左右边框加左右padding的和
     });
+
+    /* 实现点击添加商品到购物车的功能 */
+    $(".addCar").on("click", function() {
+        /* 检查是否已经登录 ，如果没有登录那就跳转到登录页面*/
+        if (!localStorage.username) {
+            window.location.href = "./login.html";
+        }
+
+        /* 获取当前商品的ID */
+        let good_id = data.good_id;
+        /* 发送网络请求把当前数据添加到购物车表中 */
+        /* 数据库表 cart_id  good_id  num isChecked */
+        /* 添加数据： */
+        /* 删除数据： */
+        /* 更新数据： */
+        $.ajax({
+            url: "../../server/car.php",
+            data: { type: "add", good_id: good_id, id: localStorage.id },
+            dataType: "json",
+            success: function(response) {
+                if (response.status == "success") {
+                    $(".cart_total").text($(".cart_total").text() * 1 + 1);
+                    
+                }
+            }
+        });
+    })
+
+/* 发请求获取购物车中商品的数量 */
+    /* 检查登录状态，如果已经登录那么就请求获取购物车的数量 */
+    if (localStorage.id) {
+        $.ajax({
+            url: "../../server/getTotalCount.php",
+            data: {
+                id: localStorage.id
+            },
+            dataType: "json",
+            success: function({ total }) {
+                // console.log(total);
+                $(".cart_total").text(total);
+            }
+        });
+    }
+
+    /* 打开购物车页面 */
+    $(".cart_total").click(() => window.location.href = "./car.html");
+
+
+
+
+
+
+
+
+
+
+
+
+
     // 跑马灯效果
     var res = [{
         "osrc": "https://img2.ch999img.com//pic/brand/20170519185626_6859.jpg",
@@ -83,28 +142,6 @@ $(() => {
 
     },1000)
 
-
-    /* function Textrolling() {
-        t = parseInt(x.css('top'));
-        y.css('top', '252px');
-        x.animate({
-            top: t - 52 + 'px'
-        }, 'slow'); //19为每个li的高度
-        if (Math.abs(t) == h - 52) { //19为每个li的高度
-            y.animate({
-                top: '0px'
-            }, 'slow');
-            z = x;
-            x = y;
-            y = z;
-        }
-        setTimeout(Textrolling, 1000); //滚动间隔时间 现在是3秒
-    }
-    $('.swap').html($('.roll').html());
-    x = $('.roll');
-    y = $('.swap');
-    h = $('.roll li').length * 52; //19为每个li的高度
-    setTimeout(Textrolling, 1000); //滚动间隔时间 现在是3秒 */
     // 渲染左边浏览过还买了
     var data1 = [{
         "src": "https://img2.ch999img.com/pic/product/70x70/20191203135001394.jpg.webp",

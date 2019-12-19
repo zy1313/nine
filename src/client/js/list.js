@@ -15,7 +15,7 @@ $(() => {
                 var html = ""
                 html += JSON.parse(this.data.pic).map((ele, index) => `<a href="javascript:" class="small"><img src=${ele} alt="" class="${index==0?"active":""}"></a>`).join("");
                 this.root = document.createElement("div");
-                this.root.innerHTML = `<li class="listli"><a href="javascript:" class="picb"><img src=${this.data.img} alt=""></a>
+                this.root.innerHTML = `<li class="listli" data-id=${this.data.id}><a href="javascript:," class="picb"><img src=${this.data.img} alt=""></a>
                 <div class="picm">${html}</div>
                 <a href="javascript:" class="title">${this.data.title}</a>
                 <div class="pop"><span>￥${this.data.price}</span></div>
@@ -101,14 +101,17 @@ $(() => {
     // 为每一个li添加点击事件，获取想要的值作为参数放在URL路径中传到详情页
     function big() {
         $(".listli").click(function () {
+            var good_id=$(this).data("id");
             var ltitle = $(this).find(".title").text();
             var lprice = $(this).find(".pop").children("span").text();
             var oimg0 = $(this).find(".picm").children("a").eq(0).children().attr("src");
             var oimg1 = $(this).find(".picm").children("a").eq(1).children().attr("src");
             var oimg2 = $(this).find(".picm").children("a").eq(2).children().attr("src");
             var oimg3 = $(this).find(".picm").children("a").eq(3).children().attr("src");
-            var queryString = `title=${ltitle}&lprice=${lprice}&oimg0=${oimg0}&oimg1=${oimg1}&oimg2=${oimg2}&oimg3=${oimg3}`;
+            var queryString = `good_id=${good_id}&title=${ltitle}&lprice=${lprice}&oimg0=${oimg0}&oimg1=${oimg1}&oimg2=${oimg2}&oimg3=${oimg3}`;
             window.location.href = "./details.html?" + queryString;
+
+            
 
         })
     }

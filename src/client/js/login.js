@@ -73,6 +73,10 @@ $(()=>{
                             Cookie.set("phone",$("#username-ID").val(),90)
                             Cookie.set("password",$("#password-ID").val(),90)
                         }
+                         /* 存储登录数据到本地 */
+                        localStorage.username = $("#username-ID").val();
+                        localStorage.id = response.data.userId;
+
                         window.location.href = "./home.html";
                     } else {
                         alert(response.data.msg);

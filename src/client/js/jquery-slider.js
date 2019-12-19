@@ -42,8 +42,10 @@ class Slider {
         })
     };
     animate(index) {
+        var arr=["rgb(211, 218, 228)","rgb(255, 255, 255)","rgb(255,174,39)","rgb(138, 161, 254)"]
         $(".slider-btn").eq(index).addClass("active").siblings().removeClass("active");
         $(".slider-img").eq(index).css("zIndex", 1).siblings().css("zIndex", 0);
+        $(".bannerWrap").css("background-color",arr[index])
     };
     check(method) {
         if (method == "next") {

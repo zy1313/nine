@@ -42,7 +42,7 @@ $(() => {
     let item = ["https://img2.ch999img.com/newstatic/1382/0148b2c546c719d6.jpg",
         "https://img2.ch999img.com/newstatic/1383/01490defe0e6ff88.jpg",
         "https://img2.ch999img.com/newstatic/1382/0147bbc0f8b85895.jpg",
-        "https://img2.ch999img.com/newstatic/1379/01458e535b65ce3a.jpg"
+        "https://img2.ch999img.com/newstatic/1377/014c439c83e4d87f.jpg"
     ];
     $(".banner-center").banner(item)
 

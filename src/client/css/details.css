@@ -202,10 +202,28 @@ html {
     color: #fff;
 }
 .glass-foot a:nth-child(2){
-    background: #ccc;
-    color: #333;
+    background: #f21c1c;
+    color: #fff;
     border: 1px solid #333;
 }
+.glass-foot a:nth-child(3){
+    width: 65px;
+    height: 44px;
+    padding: 0px 5px;
+    font-size: 12px;
+    color: black
+
+}
+.glass-foot a:nth-child(4){
+    width: 40px;
+    height: 44px;
+    padding: 0px 5px;
+    background: #f21c1c;
+    color: #fff;
+    font-size: 22px;
+    border: 1px solid #333;
+}
+
 
 .detailWarp{
     width: 1200px;

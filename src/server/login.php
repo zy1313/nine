@@ -29,8 +29,12 @@ if(mysqli_num_rows($result) == 0)
   }else
   {
     # (2-2-2) 密码正确，那么就返回数据(登录成功)
+    $userId = $res[0]["id"];
     $data["status"] = "success";
     $data["data"]["msg"] = "恭喜你，登录成功";
+    $data["data"]["userId"] = $userId;
+    $data["data"]["password"] = $password;
+    $data["data"]["phone"] = $phone;
   }
 }
 

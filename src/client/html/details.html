@@ -109,7 +109,7 @@
                 <div class="nav-foot">
                     <div class="nav-foot-left">
                         <p>查看全部分类</p>
-                        <div class="sevList"></div>
+                        <div class="sevList" style="position: absolute;"></div>
                     </div>
                     <div class="nav-foot-right">
                         <a href="">首页</a>
@@ -125,7 +125,7 @@
                 </div>
             </div>
             <div class="navCase-right">
-                <a href="http://127.0.0.1/code/JiuJiAnli/src/html/shopCar.html">购物车</a>
+                <a href="./car.html">购物车</a>
             </div>
         </div>
     </div>
@@ -234,8 +234,10 @@
                 </div>
                 <img class="peisong" src="../img/peisong_03.jpg" alt="">
                 <div class="glass-foot">
-                    <a href="">到货通知</a>
-                    <a href="">加购物车</a>
+                    <a href="javascript:void(0)">到货通知</a>
+                    <a href="javascript:void(0)" class="addCar">加购物车</a>
+                    <a href="javascript:void(0)">购物车数量:</a>
+                    <a href="javascript:void(0)" class="cart_total">0</a>
                 </div>
             </div>
         </div>
@@ -366,6 +368,16 @@
             $(this).children(".sevList").slideUp(500)
         })
     </script>
+
+    <!--  固定定位的划过效果 -->
+    <script>
+        $(".item").hover(function(){
+               $(this).css("background","#f21c1c").siblings().css("background","#333")
+               $(this).children().children("span").css("visibility","visible").css("opacity","1")
+           },function(){
+               $(this).css("background","#333").children().children("span").css("visibility","hidden").css("opacity","0")
+           })
+       </script>
     <!-- <script> 
     var olis=document.querySelectorAll(".alsobuy-item");
     // console.log(olis);

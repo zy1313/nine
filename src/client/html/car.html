@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/home-top.css">
+    <link rel="stylesheet" href="../css/car.css">
+    <link rel="stylesheet" href="../css/lastBut2.css">
+    <link rel="stylesheet" href="../css/bottom.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/car.js"></script>
+</head>
+<body>
+       <!-- 顶部导航 -->
+       <div class="top-navWrap clear-fix ">
+        <div class="top-nav">
+            <div class="top-nav-left">
+                <span class="top-position">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;天河区
+                    <!-- <img src="../img/positionNav_03.jpg" alt=""> -->
+                </span>
+                <span class="huanYing">Hi!欢迎来九机网！</span>
+                <a href="./login.html">登录</a>
+                <a href="./register.html">免费注册</a>
+            </div>
+            <div class="top-nav-right">
+                <a class="yangshi" href="">个人中心
+                    <!-- <img src="../img/dingdanNav_03.jpg" alt=""> -->
+                    <ul>
+                        <li>我的订单</li>
+                        <li>我的订单</li>
+                        <li>我的订单</li>
+                        <li>我的订单</li>
+                        <li>我的订单</li>
+                        <li>我的订单</li>
+                    </ul>
+                </a>
+                <a href="">会员俱乐部</a>
+                <a href="">帮助中心</a>
+                <a class="yangshi" href="">客户端
+                    <div class="kehuwarp">
+                        <div class="kehu1">
+                            <img src="https://img2.ch999img.com/newstatic/1383/0143897197ed0939.png" alt="">
+                            <p>扫描二维码下载</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">企业采购</a>
+                <a href="">在线服务</a>
+                <div class="yangshiqq">网站导航
+                    <div class="wd">
+                        <!-- <li class="wdli">
+                            <h3>九机特色</h3>
+                            <div class="wdd">
+                                <a href="">附近门店</a>
+                                <a href="">附近门店</a>
+                                <a href="">附近门店</a>
+                                <a href="">附近门店</a>
+                                <a href="">附近门店</a>
+                                <a href="">附近门店</a>
+                                <a href="">附近门店</a>
+                            </div>
+                        </li> -->
+
+                    </div>
+                </div>
+                <a href="">不良信息举报</a>
+                <a class="yangshi" href="">400-008-3939
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 购物车头部 -->
+    <div class="carTop">
+        <a href="">
+            <img src="https://img2.ch999img.com/newstatic/1379/0138275297d27641.png" alt="">
+        </a>
+        <div class="user">
+            <span class="userInfo">请登录</span>
+            <span class="status">登录</span>
+        </div>
+    </div>
+
+    <div class="carBox">
+        <div class="boxTitle">
+            <div class="titleL">
+                <a href="javascript:;" class="cur">全部商品 
+                    <span class="red">0</span>
+                </a>
+            </div>
+            <div class="titleR">已选 
+                <span class="red">0</span> 件，合计（不含运费）
+                <b class="red">￥00.00</b>
+            </div>
+        </div>
+        <div class="boxContent">
+            <div class="carItem">
+                <div class="itemleft">
+                    <!-- <label for="" class="cb"></label>
+                    <input type="checkbox" name="" id="checkAll">全选 -->
+                </div>
+                <div class="itemright">
+                    <div class="product">商品</div>
+                    <div class="price">价格</div>
+                    <div class="count">数量</div>
+                    <div class="sum">小计</div>
+                    <div class="action">操作</div>
+                </div>
+            </div>
+            <!-- <div class="carList">
+                <input type="checkbox" id="carcheck">
+                <div class="pic">
+                    <a href="">
+                        <img src="https://img2.ch999img.com/pic/product/440x440/20191209202257675.jpg" alt="">
+                    </a>
+                    <p>华为 Mate 30 （TAS-AN00）全网通5G版 亮黑色 8GB+128GB </p>
+                </div>
+                <div class="lprice">49999</div>
+                <div class="lcount">
+                  <a href="javascript:,">-</a>  
+                  <input type="text" id="counts" disabled="disabled">
+                <a href="javascript:,">+</a>
+            </div>
+                <div class="ltotal">49999</div>
+                <div class="laction">删除</div>
+            </div> -->
+            
+         
+            <div class="carTotal">
+                <div class="toleft">
+                    <input type="checkbox" name="" id="all">全选
+                    <label for="all"></label>                   
+                </div>
+                <a href="javascript:(void)">删除</a>
+                <div class="toright">
+                    <span>已选商品  
+                        <b class="red1">0</b>件
+                        </span>
+                    <span>总计（不含运费）： 
+                        <b class="red2">￥00.00</b>
+                        </span>
+                    <button id="comfir">结算</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot"></div>
+
+    <script>
+        $(".foot").load("./home.html .lastBut2,.bottom")
+    </script>
+</body>
+</html>
