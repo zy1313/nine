@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,10 @@
     <script src="../js/home.js"></script>
     <script src="../js/car.js"></script>
 </head>
+
 <body>
-       <!-- 顶部导航 -->
-       <div class="top-navWrap clear-fix ">
+    <!-- 顶部导航 -->
+    <div class="top-navWrap clear-fix ">
         <div class="top-nav">
             <div class="top-nav-left">
                 <span class="top-position">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;天河区
@@ -82,18 +84,32 @@
             <span class="userInfo">请登录</span>
             <span class="status">登录</span>
         </div>
+        <div class="trade-step flex" data-v-3b974c42="">
+            <dl class="cur" data-v-3b974c42="">
+                <dt data-v-3b974c42="">1</dt>
+                <dd data-v-3b974c42="">我的购物车</dd>
+            </dl>
+            <dl data-v-3b974c42="">
+                <dt data-v-3b974c42="">2</dt>
+                <dd data-v-3b974c42="">填写核对订单</dd>
+            </dl>
+            <dl data-v-3b974c42="">
+                <dt data-v-3b974c42="">3</dt>
+                <dd data-v-3b974c42="">付款</dd>
+            </dl>
+        </div>
     </div>
 
     <div class="carBox">
         <div class="boxTitle">
             <div class="titleL">
-                <a href="javascript:;" class="cur">全部商品 
+                <a href="javascript:;" class="cur">全部商品
                     <span class="red">0</span>
                 </a>
             </div>
-            <div class="titleR">已选 
-                <span class="red">0</span> 件，合计（不含运费）
-                <b class="red">￥00.00</b>
+            <div class="titleR">已选
+                <span class="red1">0</span> 件，合计（不含运费）
+                <b class="red2">￥00.00</b>
             </div>
         </div>
         <div class="boxContent">
@@ -127,21 +143,21 @@
                 <div class="ltotal">49999</div>
                 <div class="laction">删除</div>
             </div> -->
-            
-         
+
+
             <div class="carTotal">
                 <div class="toleft">
                     <input type="checkbox" name="" id="all">全选
-                    <label for="all"></label>                   
+                    <label for="all"></label>
                 </div>
                 <a href="javascript:(void)">删除</a>
                 <div class="toright">
-                    <span>已选商品  
+                    <span>已选商品
                         <b class="red1">0</b>件
-                        </span>
-                    <span>总计（不含运费）： 
+                    </span>
+                    <span>总计（不含运费）：
                         <b class="red2">￥00.00</b>
-                        </span>
+                    </span>
                     <button id="comfir">结算</button>
                 </div>
             </div>
@@ -153,4 +169,5 @@
         $(".foot").load("./home.html .lastBut2,.bottom")
     </script>
 </body>
+
 </html>
